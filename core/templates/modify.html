@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Edytuj</h3>
+<form action="" method="post">
+{% csrf_token %}
+ First name:<br>
+  <input type="text" name="name" value="{{ person.name }}"><br>
+  Last name:<br>
+  <input type="text" name="surname" value="{{ person.surname}}">
+    <div>
+       Email <input type="text" name="email" value="{{ person.somebodys_emails.email }}">
+       Email type <input type="text" name="email_type" value="{{ person.somebodys_emails.email_type }}">
+    </div>
+    <div>
+       Phone <input type="text" name="phone" value="{{ person.somebodys_phone.phone_number }}">
+       Phone type <input type="text" name="phone_type" value="{{ person.somebodys_phone.phone_type }}">
+    </div>
+
+        <input type="submit" value="Dodaj">
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for person in people %}
+        <div>
+            {{ person.name }} {{ person.surname }}
+        <input type="submit" name="edit" value="edytuj">
+            <input type="submit" name="delete" value="usuń">
+        {% if person.somebodys_phone %}
+            ({{ person.somebodys_phone.phone_number }})
+        {% endif %}
+         {% if person.somebodys_emails %}
+            ({{ person.somebodys_emails.email }})
+        {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}
